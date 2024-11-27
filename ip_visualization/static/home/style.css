@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #2a0d45;
+    min-height: 200vh; /* Make the page scrollable for two screens */
+}
+
+.flash-cards-container {
+    position: fixed;
+    bottom: -150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    
+    
+    
+}
+
+.flash-card {
+    background-color: #4a148c;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.6s ease;
+    opacity: 0.9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.flash-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.flash-card p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}
+
+.flash-card .image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #f0a500;
+    overflow: hidden;
+}
+
+.flash-card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flash-card.left {
+    transform: translateX(-120%);
+}
+
+.flash-card.right {
+    transform: translateX(120%);
+}
+
+.flash-card.center.active {
+    height: 230px;
+    transform: translateY(-50vh);
+    width: 32%;
+    z-index: 1100;
+}
+
+.flash-card.left.active {
+    transform: translateX(20%) translateY(-20vh);
+    height: 280px;
+    width: 19%;
+}
+
+.flash-card.right.active {
+    transform: translateX(-20%) translateY(-20vh);
+    height: 280px;
+    width: 19%;
+}
+
+.flash-card a {
+    color: #f0a500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.flash-card a:hover {
+    color: #fff;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2a0d45;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #e0f7ff;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(#7e6496, #2a0d45);
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
+}
+
+.navbar ul li a:hover {
+    background: #7e6496;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Main Section Styles */
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.main-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    line-height: 1.2;
+}
+
+.main-section img {
+    max-width: 80%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
+    margin-top: -110px;
+}
+
+.main-section p a {
+    text-decoration: none;
+    color: #f0a500;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.main-section p a:hover {
+    color: #fff;
+    background-color: #f0a500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(42, 13, 69, 0.9);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar ul li {
+        margin: 0 8px;
+    }
+
+    .main-section h1 {
+        font-size: 3em;
+
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .flash-card {
+        width: 40%;
+        height: 150px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .flash-card {
+        width: 40%;
+        height: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .flash-card {
+        width: 30%;
+        height: 120px;
+    }
+}

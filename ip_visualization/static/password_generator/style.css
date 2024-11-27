@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #2a0d45;
+    height: 100vh; /* Ensure the body takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Parallax Effect for Background */
+.parallax {
+    background-image: url("{% static 'images/1000302481.png' %}");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Space between logo and nav links */
+    background-color: #2a0d45; /* Nmap Purple */
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    flex-shrink: 0; /* Prevents the logo from resizing */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly; /* Ensures equal spacing between buttons */
+    flex-grow: 1; /* Makes the <ul> stretch to fill the available space */
+    align-items: center; /* Vertically centers the items */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    flex: 1; /* Distributes space equally among items */
+    text-align: center; /* Centers the links inside their space */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #e0f7ff;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(#7e6496, #2a0d45); /* Gradient background */
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
+}
+
+.navbar ul li a:hover {
+    background: #7e6496; /* Solid color on hover */
+    text-decoration: none;
+    color: #fff;
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+                inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Centered Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-grow: 1; /* Ensures container fills remaining space after navbar */
+}
+
+.container h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 20px;
+    
+}
+
+.password-display {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.password-display input {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+.password-display button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f0a500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.password-display button:hover {
+    background-color: #d08e00;
+}
+
+/* Strength Display */
+#strength-display {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+#password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bulk-password-generator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#bulk-passwords {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(42, 13, 69, 0.9);
+    text-align: center;
+    padding: 20px 0;
+    color: #aaa;
+}
+
+.generate {
+padding: 10px 20px;
+font-size: 1em;
+/* background-color: #f0a500; */
+color: #ffffff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+/* transition: background-color 0.5s; */
+}

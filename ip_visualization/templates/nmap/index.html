@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon for the webpage -->
+  <link rel="icon" type="image/x-icon" href="{% static 'myLogo.png' %}">
+  
+  <!-- Link to the external stylesheet -->
+  <link rel="stylesheet" href="{% static 'nmap/style.css' %}">
+  
+  <!-- Title of the webpage -->
+  <title>Nmap Scanner</title>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <!-- Navigation Links -->
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/scanner/">IP Visualization Tool</a></li>
+      <li><a href="/nmap/">Nmap Scanner</a></li>
+      <li><a href="/password_generator/">Password Generator</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <!-- Left Panel: Scan Options -->
+    <div class="left-panel">
+      <h2>Scan Options</h2>
+      <!-- Scan Form -->
+      <form id="scan-form">
+        <!-- Basic Scan Option -->
+        <div>
+          <input type="radio" id="basic" name="scan_type" value="basic" checked>
+          <label for="basic">Basic (Ping Sweep)</label>
+        </div>
+        
+        <!-- Intermediate Scan Option -->
+        <div>
+          <input type="radio" id="intermediate" name="scan_type" value="intermediate">
+          <label for="intermediate">Intermediate (Top Ports)</label>
+        </div>
+        
+        <!-- Custom Scan Option -->
+        <div>
+          <input type="radio" id="custom" name="scan_type" value="custom">
+          <label for="custom">Custom Command</label>
+          <!-- Input field for custom Nmap command, disabled by default -->
+          <input type="text" id="custom-command" name="custom_command" placeholder="Enter custom nmap command" disabled>
+        </div>
+        
+        <!-- Button to start the scan -->
+        <button type="button" onclick="startScan()">Start Scan</button>
+      </form>
+
+      <!-- Button to download scan output -->
+      <button type="button" class="download-button" onclick="downloadOutput()">Download Output</button>
+    </div>
+
+    <!-- Right Panel: Live Scan Output -->
+    <div class="right-panel">
+      <h2>Live Scan Output</h2>
+      <!-- Terminal display area for real-time scan output -->
+      <div id="terminal" class="terminal"></div>
+    </div>
+  </div>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="{% static 'nmap/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netDefender</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <!-- Navigation Menu -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/scanner/">IP Visualization Tool</a></li>
+            <li><a href="/nmap/">Nmap Scanner</a></li>
+            <li><a href="/password_generator/">Password Generator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div>
+            <!-- Displaying a large logo -->
+            <img src="{% static 'images/myLogo.png' %}" alt="Big Logo" style="max-width: 100%; height: auto; max-height: 55vh;">
+            <!-- Toolkit description -->
+            <h1>            
+                The NetDefender Toolkit is a cloud-based cybersecurity tool that combines three essential tools that enhance network monitoring, protection, and vulnerability assessment through user-friendly and scalable modules. The toolkit bridges the gap between complex cybersecurity functionalities and ease of use. Its modular design ensures adaptability for both individuals and organizations, strengthening digital security.
+            </h1>
+        </div>
+    </section>
+
+    <!-- Spacer to add extra height for scrolling -->
+    <div style="height: 120vh;"></div> <!-- This div adds extra height to make the page scrollable -->
+
+    <!-- Flash Cards Section -->
+    <div class="flash-cards-container">
+        <!-- Flash Card for Ranvir -->
+        <div class="flash-card left">
+            <div class="image">
+                <img src="{% static 'images/ranvir.jpg' %}" alt="Display Picture">
+            </div>
+            <p>Ranvir Ranvijay Singh</p>
+        </div>
+        <!-- Flash Card for Harsh -->
+        <div class="flash-card center">
+            <div class="image">
+                <img src="{% static 'images/harsh.jpg' %}" alt="Display Picture">
+            </div>
+            <p>Harsh Vardhan Singh</p>
+        </div>
+        <!-- Flash Card for Aaditya -->
+        <div class="flash-card right">
+            <div class="image">
+                <img src="{% static 'images/aaditya.jpg' %}" alt="Display Picture">
+            </div>
+            <p>Aaditya Kumar</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer Content -->
+        <p>© SUPREME LEADER - All rights reserved</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="{% static 'home/script.js' %}"></script>
+</body>
+</html>

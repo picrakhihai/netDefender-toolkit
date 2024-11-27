@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title and favicon -->
+    <title>Random Password Generator</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'myLogo.png' %}">
+    
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="{% static 'password_generator/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <!-- Navigation links for easy access to other sections -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/scanner/">IP Visualization Tool</a></li>
+            <li><a href="/nmap/">Nmap Scanner</a></li>
+            <li><a href="/password_generator/">Password Generator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main container for the password generator -->
+    <div class="container">
+        <!-- Heading and description -->
+        <h1>Random Password Generator</h1>
+        <p>Get a secure and random password. All passwords are securely generated on your device only and are never sent across the internet.</p>
+
+        <!-- Password display section -->
+        <div class="password-display">
+            <!-- Input field to display the generated password -->
+            <input type="text" id="generated-password" readonly>
+            <!-- Button to copy the generated password -->
+            <button id="copy-button">Copy</button>
+        </div>
+
+        <!-- Password strength display -->
+        <div id="strength-display">
+            <!-- Dynamic span to show password strength -->
+            <span id="strength-value"></span>
+        </div>
+
+        <!-- Form for password generation options -->
+        <form id="password-form">
+            <!-- Slider to select password length -->
+            <div class="slider-container">
+                <label for="length">Password Length:</label>
+                <input type="range" id="length" name="length" min="8" max="32" value="12">
+                <!-- Display selected password length -->
+                <span id="length-value">12</span>
+            </div>
+
+            <!-- Settings for character inclusion -->
+            <div class="settings">
+                <label><input type="checkbox" id="uppercase" checked> A-Z (uppercase)</label>
+                <label><input type="checkbox" id="lowercase" checked> a-z (lowercase)</label>
+                <label><input type="checkbox" id="numbers" checked> 0-9</label>
+                <label><input type="checkbox" id="symbols" checked> !@#$%^&*</label>
+                <label><input type="checkbox" id="ambiguous"> Avoid ambiguous characters</label>
+            </div>
+
+            <!-- Single password generation button -->
+            <div class="password-display">
+                <button type="button" id="generate-button">Generate Password</button>
+            </div>
+
+            <!-- Bulk password generation section -->
+            <div class="password-display">
+                <!-- Input for the number of passwords to generate -->
+                <input type="number" id="bulk-count" min="1" value="5" placeholder="Enter number of passwords">
+                <!-- Button to generate multiple passwords -->
+                <button type="button" id="bulk-generate-button">Bulk Generate Passwords</button>
+            </div>
+
+            <!-- Section to display the bulk-generated passwords -->
+            <div id="bulk-passwords"></div>
+        </form>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="{% static 'password_generator/script.js' %}"></script>
+</body>
+</html>

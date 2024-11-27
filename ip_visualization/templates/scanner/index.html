@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Visualization</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'myLogo.png' %}">
+    <link rel="stylesheet" href="{% static 'scanner/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/scanner/">IP Visualization Tool</a></li>
+            <li><a href="/nmap/">Nmap Scanner</a></li>
+            <li><a href="/password_generator/">Password Generator</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>IP Visualization</h1>
+        <button class="button" onclick="startCapture()">Start Packet Capture</button>
+        <div id="response" class="response"></div>
+    </div>
+
+    <!-- Map container -->
+    <div class="map-container">
+        <iframe id="map-frame" 
+                src="https://www.google.com/maps/d/u/0/embed?mid=1-qmQDoG5zbzg3WeuS-W9KLDaHQLopLs&ehbc=2E312F" 
+                width="1400" height="700" frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+    
+    <script src="{% static 'scanner/scripts.js' %}"></script>
+</body>
+</html>
